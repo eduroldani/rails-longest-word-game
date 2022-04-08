@@ -1,0 +1,15 @@
+<h1>New Game</h1>
+
+<%=@letters%>
+
+<p>What is the longest word you can find with the following 10 random letters?</p>
+
+
+<form action="/score" method="post">
+
+  <input id="tags_list" name="array" type="hidden" value= <%=@letters.join(",")%> />
+  <input type="text" name="answer" placeholder="Answer:">
+  <input type="submit"value="Play!" >
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+</form>
